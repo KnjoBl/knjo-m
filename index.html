@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <title>KNJO M — Estudio creativo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="mark">K<span>Ω</span></div><div><strong>KNJO M</strong><small>CREATIVE SYSTEM</small></div></div>
+    <div class="workspace-label">ESPACIO DE TRABAJO</div>
+    <button class="nav active" data-view="studio"><span>▦</span> Estudio creativo</button>
+    <button class="nav" data-view="templates"><span>▧</span> Plantillas</button>
+    <button class="nav" data-view="enhance"><span>✧</span> Mejorar medios</button>
+    <button class="nav" data-view="library"><span>▤</span> Biblioteca</button>
+    <div class="sidebar-bottom"><span class="status-dot"></span> Prototipo local <small>V0.1 · Sin servicios externos</small></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><span class="eyebrow">KNJO SYSTEMS / PRODUCTO</span><h1 id="page-title">Estudio creativo</h1></div><div class="top-actions"><span class="pill">V0.1 · Prototipo</span><button class="button secondary" id="reset">Restablecer</button></div></header>
+    <section class="view active" id="view-studio">
+      <div class="intro"><div><h2>Publicidad consistente.<br><em>Sin empezar de cero.</em></h2><p>Diseña flyers reutilizables y prepara recursos visuales desde un mismo espacio.</p></div><div class="intro-chip">01 <span>/ DISEÑAR</span></div></div>
+      <div class="studio-grid">
+        <section class="panel editor-panel">
+          <div class="panel-heading"><div><span class="eyebrow">EDITOR DE PLANTILLA</span><h3>Personaliza tu flyer</h3></div><span class="mini-badge">Editable</span></div>
+          <label>Formato de publicación<select id="format"><option value="story">Historia vertical · 9:16</option><option value="square">Cuadrado · 1:1</option><option value="landscape">Horizontal · 16:9</option></select></label>
+          <label>Nombre de marca<input id="brand-name" value="TU MARCA" maxlength="32"></label>
+          <label>Titular principal<input id="headline" value="HECHO PARA DESTACAR" maxlength="60"></label>
+          <label>Texto secundario<textarea id="subline" rows="2" maxlength="120">Calidad, confianza y rendimiento en cada detalle.</textarea></label>
+          <div class="two-fields"><label>Color principal<input type="color" id="accent" value="#35d6c5"></label><label>Estilo<select id="style"><option value="dark">Oscuro premium</option><option value="light">Claro limpio</option><option value="bold">Alto impacto</option></select></label></div>
+          <label>Imagen del producto<input type="file" id="image-upload" accept="image/*"><small class="help">La imagen se procesa solo en esta página. No se sube a un servidor.</small></label>
+          <div class="actions"><button class="button primary" id="save-template">Guardar plantilla en este navegador</button><button class="button secondary" id="export">Exportar vista previa PNG</button></div>
+          <p class="notice" id="message" aria-live="polite">Los cambios se reflejan en la vista previa.</p>
+        </section>
+        <section class="preview-area">
+          <div class="preview-top"><span>VISTA PREVIA EN VIVO</span><span id="dimension">9:16 · vertical</span></div>
+          <div class="ad-wrap" id="ad-wrap">
+            <article class="ad-card dark" id="ad-card">
+              <div class="ad-top"><div class="ad-mark">KΩ</div><span id="preview-brand">TU MARCA</span></div>
+              <div class="ad-copy"><span class="ad-kicker">NUEVA CAMPAÑA / 2026</span><h2 id="preview-headline">HECHO PARA<br>DESTACAR</h2><p id="preview-subline">Calidad, confianza y rendimiento en cada detalle.</p></div>
+              <div class="product-placeholder" id="product-placeholder"><div class="placeholder-ring">✧</div><span>IMAGEN DEL PRODUCTO</span><small>Sube una imagen para personalizar</small></div>
+              <img id="preview-image" alt="Vista previa del producto" hidden>
+              <div class="ad-bottom"><span>DISEÑO REUTILIZABLE</span><span class="ad-line"></span><span>KNJO M</span></div>
+            </article>
+          </div>
+          <p class="preview-note">Vista previa demostrativa. El logotipo KΩ es provisional; sustituir por el recurso oficial antes de publicar.</p>
+        </section>
+      </div>
+    </section>
+    <section class="view" id="view-templates">
+      <div class="section-intro"><span class="eyebrow">SISTEMA REUTILIZABLE</span><h2>Una base. Muchas campañas.</h2><p>Guarda una composición y reutiliza su estructura para distintos productos o promociones.</p></div>
+      <div class="template-grid">
+        <button class="template-tile" data-preset="premium"><div class="tile-art premium"><span>01 / PREMIUM</span><b>HECHO PARA<br>DESTACAR</b><i>Espacio de producto</i></div><strong>Oscuro premium</strong><small>Contraste alto · producto protagonista</small></button>
+        <button class="template-tile" data-preset="clean"><div class="tile-art clean"><span>02 / LIMPIO</span><b>MENOS RUIDO.<br>MÁS IMPACTO.</b><i>Espacio de producto</i></div><strong>Claro limpio</strong><small>Minimalista · lectura rápida</small></button>
+        <button class="template-tile" data-preset="impact"><div class="tile-art impact"><span>03 / CAMPAÑA</span><b>QUE SE NOTE.</b><i>Espacio de producto</i></div><strong>Alto impacto</strong><small>Bloques fuertes · promoción visual</small></button>
+      </div>
+    </section>
+    <section class="view" id="view-enhance">
+      <div class="section-intro"><span class="eyebrow">IMAGEN Y VIDEO</span><h2>Mejora el material original.</h2><p>El flujo de interfaz queda definido; el procesamiento real se integrará en una fase posterior con herramientas verificadas.</p></div>
+      <div class="enhance-grid">
+        <div class="panel upload-panel"><div class="upload-icon">↑</div><h3>Subir imagen o video</h3><p>Elige un archivo para preparar una solicitud de mejora. En esta versión no se envía ni se procesa en la nube.</p><input type="file" id="media-upload" accept="image/*,video/*"><div id="media-info" class="media-info">Ningún archivo seleccionado</div></div>
+        <div class="panel"><span class="eyebrow">AJUSTES PROPUESTOS</span><h3>Selecciona el objetivo</h3><label class="check-row"><input type="checkbox" checked> Nitidez y detalle</label><label class="check-row"><input type="checkbox" checked> Luz y contraste</label><label class="check-row"><input type="checkbox" checked> Color natural</label><label class="check-row"><input type="checkbox"> Reducción de ruido</label><label class="check-row"><input type="checkbox"> Estabilización de video</label><label class="check-row"><input type="checkbox"> Reescalado de resolución</label><button class="button primary full" id="prepare-enhance">Preparar solicitud de mejora</button><p class="notice" id="enhance-message">La mejora real todavía no está conectada. No se afirmará que el archivo fue mejorado hasta ejecutar un motor de procesamiento.</p></div>
+      </div>
+    </section>
+    <section class="view" id="view-library">
+      <div class="section-intro"><span class="eyebrow">RECURSOS</span><h2>Biblioteca de trabajo</h2><p>En el prototipo, las plantillas guardadas permanecen en el almacenamiento local de este navegador.</p></div>
+      <div class="panel library-panel"><div class="panel-heading"><h3>Plantillas guardadas</h3><span class="mini-badge" id="saved-count">0 elementos</span></div><div id="saved-list" class="saved-list"><p class="empty-state">Todavía no hay plantillas guardadas.</p></div></div>
+      <p class="notice">No es una biblioteca sincronizada ni una base de datos. Si borras los datos del navegador, las plantillas locales pueden perderse.</p>
+    </section>
+    <footer>KNJO SYSTEMS™ · KNJO M · PROTOTIPO FUNCIONAL DE INTERFAZ · NO APTO AÚN PARA PRODUCCIÓN</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
